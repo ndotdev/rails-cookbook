@@ -12,13 +12,14 @@
     </div>
     <div class="cards mt-3">
         <% @categories.each do |category| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            <div>
-                <h2><%= category.name %></h2>
-                <p><%= category.recipes.count %> recipes</p>
-                <%= link_to category.name, root_path(category) %>
+        <%= link_to category_path(category) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+                <div>
+                    <h2><%= category.name %></h2>
+                    <p><%= category.recipes.count %> recipes</p>
+                </div>
             </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
 </div>
