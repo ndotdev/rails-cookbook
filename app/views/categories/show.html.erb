@@ -13,8 +13,15 @@
     
     <div class="cards">
         <% @category.bookmarks.each do |bookmark| %>
+        
             <div class="card-trip">
-            <img src="<%= bookmark.recipe.image_url %>" />
+                <img src="<%= bookmark.recipe.image_url %>" />
+                <%= link_to bookmark_path(bookmark), 
+                    data: { turbo_method: :delete, 
+                    turbo_confirm: "Are you sure to remove #{bookmark.recipe.name} from your #{@category.name} list?"},
+                    class: 'btn-delete' do %>
+                    <i class="fa-solid fa-trash"></i>
+                <% end %>
 
                 <div class="card-trip-description">
                     <div>

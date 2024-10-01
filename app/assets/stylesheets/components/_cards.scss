@@ -66,6 +66,7 @@
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    position: relative;
   }
   
   .card-trip > img {
@@ -105,4 +106,17 @@
   .card-trip-description {
     padding: 16px;
     height: 150px
+  }
+
+  .btn-delete {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    i {
+      color: gray;
+      &:hover {
+        color: red;
+      }
+    }
   }

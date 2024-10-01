@@ -10,6 +10,7 @@
 
 puts "Creating recipes...."
 
+Bookmark.destroy_all
 Recipe.destroy_all
 
 Recipe.create!(
