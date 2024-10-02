@@ -1,7 +1,8 @@
 <div class="form-new">
-    <h1>Add a Recipe to this Category</h1>
-    <%= simple_form_for @category do |f| %>
-        <%= f.input :name%>
-        <%= f.button :submit, class: "btn btn-warning" %>
-    <% end %>
+  <h3>Create a new Category</h3>
+  <%= simple_form_for @category do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit 'Create category', class: 'btn btn-warning'  %>
+  <% end %>
 </div>
